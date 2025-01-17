@@ -5,14 +5,14 @@ pipeline {
         stage('Starting pod with nginx'){
             steps {
                 script {
-                    sh 'kubectl apply -f nginx-pod.yaml'
+                    sh 'kubectl apply -f nginx-pod.yaml --validate=false'
                 }
             }
         }
         stage('Starting nginx-service'){
             steps {
                 script {
-                    sh 'kubectl apply -f nginx-service.yaml'
+                    sh 'kubectl apply -f nginx-service.yaml --validate=false'
                 }
             }
         }
