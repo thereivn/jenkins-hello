@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                // Клонирование репозитория с манифестами
-                git 'https://github.com/thereivn/jenkins-hello.git'
-            }
-        }
         stage('Starting pod with nginx'){
             steps {
                 script {
