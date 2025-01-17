@@ -34,12 +34,5 @@ pipeline {
                 }
             }
         }
-        stage('Opening nginx server in browser'){
-            steps{
-                script{
-                    sh 'minikube service nginx-service'
-                }
-            }
-        }
     }
 }
