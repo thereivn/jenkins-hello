@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        KUBECONFIG = '/home/thereiv/.kube/config'
+    }
 
     stages {
         stage('Starting pod with nginx'){
