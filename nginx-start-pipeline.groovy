@@ -8,21 +8,21 @@ pipeline {
         stage('Starting pod with nginx'){
             steps {
                 script {
-                    sh 'kubectl apply -f nginx-pod.yaml --validate=false'
+                    sh 'kubectl apply -f nginx-pod.yaml'
                 }
             }
         }
         stage('Starting nginx-service'){
             steps {
                 script {
-                    sh 'kubectl apply -f nginx-service.yaml --validate=false'
+                    sh 'kubectl apply -f nginx-service.yaml'
                 }
             }
         }
         stage('Waiting while nginx is start'){
             steps{
                 script{
-                    sh 'sleep 5'
+                    sh 'sleep 10'
                 }
             }
         }
@@ -37,7 +37,7 @@ pipeline {
         stage('Opening nginx server in browser'){
             steps{
                 script{
-                    sh 'xdg-open http://localhost:8030'
+                    sh 'minikube service nginx-service'
                 }
             }
         }
