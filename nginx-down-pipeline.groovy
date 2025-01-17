@@ -22,7 +22,7 @@ pipeline {
                 }
             }
         }
-        stage('Get pods and services'){
+        stage('Get pods and services after deleting nginx'){
             steps{
                 script{
                     sh 'kubectl get pods'
