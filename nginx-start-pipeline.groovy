@@ -5,20 +5,20 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Клонирование репозитория с манифестами
-                git 'https://github.com/ваш_пользователь/ваш_репозиторий.git'
+                git 'https://github.com/thereivn/jenkins-hello.git'
             }
         }
         stage('Starting pod with nginx'){
             steps {
                 script {
-                    sh 'kubectl apply -f ./yaml-files/nginx-pod.yaml'
+                    sh 'kubectl apply -f nginx-pod.yaml'
                 }
             }
         }
         stage('Starting nginx-service'){
             steps {
                 script {
-                    sh 'kubectl apply -f ./yaml-files/nginx-service.yaml'
+                    sh 'kubectl apply -f nginx-service.yaml'
                 }
             }
         }
