@@ -26,13 +26,5 @@ pipeline {
                 }
             }
         }
-        stage('All done, open nginx in browser Brave!') {
-            steps {
-                script {
-                    // opening nginx
-                    sh '/home/thereiv/jenk/open-url.sh'
-                }
-            }
-        }
     }
 }
