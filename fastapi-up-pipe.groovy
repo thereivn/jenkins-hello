@@ -1,5 +1,5 @@
 pipeline {
-    agent docker
+    agent any
 
     stages{
         stage('Pull image'){
@@ -18,8 +18,12 @@ pipeline {
             }
         }
         stage('Check Docker container and check fastapi app'){
-            sh 'docker ps | grep fastapp'
-            sh 'curl -I http://localhost:8050'
+            steps{
+                script{
+                    sh 'docker ps | grep fastapp'
+                    sh 'curl -I http://localhost:8050'
+                }
+            }
         }
     }
 }
