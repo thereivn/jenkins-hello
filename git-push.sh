@@ -1,5 +1,5 @@
 #!/bin/bash
 
 git add .
-git commit -m "updated jenkins-pipe-2.groovy"
+git commit -m "added fastapi-up-pipe.groovy"
 git push
