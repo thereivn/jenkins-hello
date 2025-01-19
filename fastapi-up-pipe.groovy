@@ -21,7 +21,7 @@ pipeline {
             steps{
                 script{
                     sh 'docker ps | grep fastapp'
-                    sh 'curl -I http://localhost:8050'
+                    sh 'curl http://localhost:8050'
                 }
             }
         }
