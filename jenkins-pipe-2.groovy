@@ -26,11 +26,11 @@ pipeline {
                 }
             }
         }
-        stage('All done, open nginx in browser!') {
+        stage('All done, open nginx in browser Brave!') {
             steps {
                 script {
                     // opening nginx
-                    sh 'xdg-open http://localhost:8030'
+                    sh '/home/thereiv/jenk/open-url.sh'
                 }
             }
         }
